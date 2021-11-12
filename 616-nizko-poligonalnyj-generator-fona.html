@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="ru" >
+<head>
+<meta charset="utf-8">
+<title>Низко полигональный генератор фона &raquo; Скрипты для сайтов</title>
+<meta name="description" content="Генератор фона из треугольников с возможностью настройки глубины, вариативности, цветов, градиента. Полученный результат можно скачать, как изображение любого выбранного размера Генератор фона из треугольников с возможностью настройки глубины, вариативности, цветов, градиента. Полученный результат">
+<meta name="keywords" content="low poly, triangle, generator, background, abstract, абстракция, фон, генератор, треугольники">
+<meta name="generator" content="DataLife Engine (http://dle-news.ru)">
+<meta property="og:site_name" content="Скрипты для сайтов">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Низко полигональный генератор фона">
+<meta property="og:url" content="https://pcvector.net/codepen/616-nizko-poligonalnyj-generator-fona.html">
+<meta property="og:image" content="/uploads/posts/2018-08/1533326959_low-poly-background-generator-min.png">
+<meta property="og:description" content="Генератор фона из треугольников с возможностью настройки глубины, вариативности, цветов, градиента. Полученный результат можно скачать, как изображение любого выбранного размераHTML&amp;lt;!-- Topbar --&amp;gt;
+&amp;lt;header">
+<link rel="search" type="application/opensearchdescription+xml" href="https://pcvector.net/index.php?do=opensearch" title="Скрипты для сайтов">
+<link rel="canonical" href="https://pcvector.net/codepen/616-nizko-poligonalnyj-generator-fona.html">
+<link rel="alternate" type="application/rss+xml" title="Скрипты для сайтов" href="https://pcvector.net/rss.xml">
+<meta name="yandex-verification" content="910ce07b3420d310" />
+<meta property="fb:app_id" content="265050550181835" />
+
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=cyrillic&display=swap" rel="stylesheet">
+<meta name="msapplication-TileColor" content="#0C4A90">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#232d3a">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link href="/templates/pcvector/css/main.css" rel="stylesheet" type="text/css">
+<link href="/templates/pcvector/css/ir-black.css?7" rel="stylesheet" type="text/css">
+<!--[if lte IE 10]><link href="/templates/pcvector/css/ie.css" rel="stylesheet" type="text/css"><![endif]-->
+</head>
+<body class="is-fix-sidebar">
+
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.10&appId=1552774388118325";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="page" class="c-page c-page--sidebar">
+	<header class="c-header" role="banner">
+		<div class="c-header__inner">
+			<div class="c-header__brand">
+				<a href="/" class="c-logo--min" aria-label="Скрипты для сайтов">
+					<svg class="c-logo__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200" xml:space="preserve">
+	          <polygon points="200,0 180,40 160,0"/>
+	          <polygon points="120,160 104,128 40,0 0,0 100,200"/>
+	        </svg>
+	      </a>
+			<a href="/" class="c-logo" aria-label="pcvector.net">
+	        <span class="c-logo__first">PC</span>
+	        <span class="c-logo__second">VECTOR</span>
+	      </a>
+			</div>
+			<div class="c-header__collapse">
+				<div class="hamburger--toggle hamburger hamburger--elastic">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+				<div class="hamburger--aside-toggle hamburger hamburger--elastic">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+				<div class="c-search">
+					<form id="q_search" method="post" role="search">
+  <input type="text" class="c-search__input" name="story" id="story" placeholder="Поиск..." autocomplete="off" autofocus aria-label="Поле поиска">
+  <a href="#" class="c-search__btn js-search-btn" aria-label="Начать поиск">
+    <svg class="svg-icon icon-search">
+      <use xlink:href="#search"></use>
+    </svg>
+  </a>
+  <a href="#" class="c-search__close js-search-close" aria-label="Очистить поиск">
+    <svg class="svg-icon icon-close">
+      <use xlink:href="#close"></use>
+    </svg>
+  </a>
+  <input type="hidden" name="do" value="search">
+  <input type="hidden" name="subaction" value="search">
+</form>
+
+				</div>
+			</div>
+		</div>
+	</header>
+	<aside class="c-page__aside">
+		<div class="c-nav__outer scrollbar-inner">
+  <nav class="c-nav__wrapper" role="navigation">
+    <ul class="c-nav">
+<li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/accordion/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-accordion">
+      <use xlink:href="#accordion"></use>
+    </svg>
+    <span class="c-nav__title">Accordion</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/animation/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-animation">
+      <use xlink:href="#animation"></use>
+    </svg>
+    <span class="c-nav__title">Animation</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/buttons_and_icons/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-button">
+      <use xlink:href="#button"></use>
+    </svg>
+    <span class="c-nav__title">Buttons</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/graph_and_chart/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-chart">
+      <use xlink:href="#chart"></use>
+    </svg>
+    <span class="c-nav__title">Chart &amp; Graph</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/color_picker/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-colorpicker">
+      <use xlink:href="#colorpicker"></use>
+    </svg>
+    <span class="c-nav__title">Colorpicker</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/forms/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-form">
+      <use xlink:href="#form"></use>
+    </svg>
+    <span class="c-nav__title">Form</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/image-effects/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-gallery">
+      <use xlink:href="#gallery"></use>
+    </svg>
+    <span class="c-nav__title">Gallery</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/layout_and_interface/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-layout">
+      <use xlink:href="#layout"></use>
+    </svg>
+    <span class="c-nav__title">Layout</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/lightbox_dialog_overlay/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-lightbox">
+      <use xlink:href="#lightbox"></use>
+    </svg>
+    <span class="c-nav__title">Lightbox</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/loader/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-loader">
+      <use xlink:href="#loader"></use>
+    </svg>
+    <span class="c-nav__title">Loading</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/menu_and_navigation/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-menu">
+      <use xlink:href="#menu"></use>
+    </svg>
+    <span class="c-nav__title">Menu &amp; Nav</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/parallax/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-parallax">
+      <use xlink:href="#parallax"></use>
+    </svg>
+    <span class="c-nav__title">Parallax</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/scrollup/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-scroll">
+      <use xlink:href="#scroll"></use>
+    </svg>
+    <span class="c-nav__title">Scroll</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/slideshow_and_scroller/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-slider">
+      <use xlink:href="#slider"></use>
+    </svg>
+    <span class="c-nav__title">Slider</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/social_media/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-social">
+      <use xlink:href="#social"></use>
+    </svg>
+    <span class="c-nav__title">  Social Media</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/tables/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-table">
+      <use xlink:href="#table"></use>
+    </svg>
+    <span class="c-nav__title">Table</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/tabs/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-tabs">
+      <use xlink:href="#tabs"></use>
+    </svg>
+    <span class="c-nav__title">Tabs</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/text_and_link_effects/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-text">
+      <use xlink:href="#text"></use>
+    </svg>
+    <span class="c-nav__title">Text</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/calendar_date_time/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-clock">
+      <use xlink:href="#clock"></use>
+    </svg>
+    <span class="c-nav__title">Time &amp; Clock</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/tooltips/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-tooltip">
+      <use xlink:href="#tooltip"></use>
+    </svg>
+    <span class="c-nav__title">Tooltip</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/zoom/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-zoom">
+      <use xlink:href="#zoom"></use>
+    </svg>
+    <span class="c-nav__title">Zoom</span>
+  </a>
+</li><li class="c-nav__item">
+	<a href="https://pcvector.net/scripts/other/" class="c-nav__link">
+    <svg class="c-nav__icon svg-icon icon-other">
+      <use xlink:href="#other"></use>
+    </svg>
+    <span class="c-nav__title">Other</span>
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+
+	</aside>
+
+	<div class="c-page__container">
+		<div class="c-page__inner">
+			<div class="l-page">
+				<main class="l-page__main" role="main">
+					
+					<div class="c-post-list">
+						<div id='dle-content'><article class="c-post c-post--single">
+	<header class="c-post__header">
+		<time class="c-post__time" datetime="2018-08-06">06.08.2018</time>
+		<span class="c-post__view"><svg class="svg-icon icon-eye"><use xlink:href="#eye"></use></svg> 8 536</span>
+		<span class="c-post__cat"><a href="https://pcvector.net/codepen/">Codepen</a></span>
+	</header>
+	<h1 class="c-post__title">Низко полигональный генератор фона</h1>
+	<div class="c-post__body">
+
+		<img src="/uploads/posts/2018-08/1533326959_low-poly-background-generator-min.png" alt="" class="fr-dib">Генератор фона из треугольников с возможностью настройки глубины, вариативности, цветов, градиента. Полученный результат можно скачать, как изображение любого выбранного размера<br><br><iframe height="762" scrolling="no" title="Low Poly Background Generator" src="//codepen.io/cojdev/embed/vgmxmj/?height=762&amp;theme-id=29903&amp;default-tab=result&amp;embed-version=2" allowfullscreen style="width:100%;"></iframe><br>HTML<pre><code>&lt;!-- Topbar --&gt;
+&lt;header class="topbar"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;h1&gt;Low Poly Background&lt;/h1&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="https://cojdev.github.io/lowpoly" target="_top"&gt;Full Version&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="github-button" href="https://github.com/cojdev/lowpoly" data-icon="octicon-star" data-show-count="true" aria-label="Star cojdev/lowpoly on GitHub"&gt;Star&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/header&gt;
+&lt;!-- Canvas Display --&gt;
+&lt;section class="display"&gt;
+    &lt;div class="wrap"&gt;
+        &lt;div id="loader" class="loader"&gt;
+            &lt;div class="circle"&gt;&lt;/div&gt;
+            &lt;div class="circle"&gt;&lt;/div&gt;
+            &lt;div class="circle"&gt;&lt;/div&gt;
+            &lt;div class="circle"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;canvas id="canvas" class="canvas1"&gt;&lt;/canvas&gt;
+    &lt;/div&gt;
+    &lt;canvas id="canvas2" class="canvas2"&gt;&lt;/canvas&gt;
+  &lt;div class="footer"&gt;
+    Developed by &lt;a href="https://cojdev.github.io" target="_top"&gt;Charles Ojukwu&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- Controls --&gt;
+&lt;section class="controls"&gt;
+
+    &lt;h3&gt;Dimensions&lt;/h3&gt;
+    &lt;div class="fieldgroup"&gt;
+        &lt;label for="preset-size"&gt;Presets&lt;/label&gt;
+        &lt;select id="preset-size"&gt;
+            &lt;option value="1280-720"&gt;1280x720&lt;/option&gt;
+            &lt;option value="1366-768"&gt;1366x768&lt;/option&gt;
+            &lt;option value="1920-1080"&gt;1920x1080&lt;/option&gt;
+            &lt;option value="3840-2160"&gt;3840x2160 (4K)&lt;/option&gt;
+            &lt;option value="640-1152"&gt;iPhone 5/5s&lt;/option&gt;
+            &lt;option value="750-1334"&gt;iPhone 6/7/8&lt;/option&gt;
+            &lt;option value="1080-1920"&gt;iPhone 6+/7+/8+&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="_50"&gt;
+                &lt;label for="width"&gt;Width&lt;/label&gt;
+                &lt;input type="number" id="width"&gt;
+            &lt;/div&gt;
+            &lt;div class="_50"&gt;
+                &lt;label for="height"&gt;Height&lt;/label&gt;
+                &lt;input type="number" id="height"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button id="size-btn"&gt;Set&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;h3&gt;Geometry&lt;/h3&gt;
+    &lt;div class="fieldgroup"&gt;
+        &lt;label for="variance"&gt;Variance&lt;/label&gt;
+        &lt;input type="range" id="variance" value="40"&gt;
+
+        &lt;label for="cell-size"&gt;Cell Size&lt;/label&gt;
+        &lt;input type="range" id="cell-size" value="40"&gt;
+
+        &lt;label for="oamount"&gt;Depth&lt;/label&gt;
+        &lt;input type="range" id="oamount" value="10"&gt;
+    &lt;/div&gt;
+    
+
+    &lt;h3&gt;Colour&lt;/h3&gt;
+    &lt;div class="fieldgroup"&gt;
+        &lt;label for="numColours"&gt;No. of colours: &lt;span id="num-colours"&gt;&lt;/span&gt;&lt;/label&gt;
+        &lt;input type="range" id="numColours" value="2" max="4" min="1" step="1"&gt;&lt;br&gt;
+        &lt;!-- Container for dynamically generated color input elememets --&gt;
+        &lt;div id="colour-div"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="section"&gt;
+        &lt;a id="save" class="button" download="lowpoly.png"&gt;Download Image&lt;/a&gt;
+    &lt;/div&gt;
+    
+&lt;/section&gt;
+&lt;!-- Loader --&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1"&gt;
+    &lt;defs&gt;
+    &lt;filter id="goo"&gt;
+        &lt;feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" /&gt;
+        &lt;feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" /&gt;
+        &lt;feBlend in="SourceGraphic" in2="goo" /&gt;
+    &lt;/filter&gt;
+    &lt;/defs&gt;
+&lt;/svg&gt;</code></pre><h3>CSS</h3><pre><code>@charset "UTF-8";
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0;
+font-size: 16px;}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+button {
+  outline: none;
+  cursor: pointer;
+  border: none; }
+
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+html,
+body {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-family: 'Barlow', sans-serif;
+  color: #bbb;
+  background: #ddd;
+  font-size: 16px; }
+
+a {
+  color: #5ad;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+.topbar {
+  height: 40px;
+  background: #333; }
+  .topbar li {
+    display: inline; }
+  .topbar li:not(:last-child)::after {
+    content: " •";
+    color: #666;
+    margin: 0 .25rem; }
+  .topbar h1 {
+    display: inline;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #f8f8f8;
+    margin: 0;
+    line-height: 40px;
+    padding-left: 1rem; }
+
+.display {
+  width: calc(100% - 200px);
+  text-align: center;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  top: 40px;
+  bottom: 0; }
+
+.row {
+  margin: 0 -0.5rem; }
+  .row:before, .row:after {
+    content: '';
+    display: table; }
+  .row:after {
+    clear: both; }
+
+._50 {
+  float: left;
+  padding: 0 0.5rem;
+  width: 50%; }
+
+.wrap {
+  position: relative;
+  display: inline-block;
+  height: calc(100vh - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+
+.canvas1 {
+  max-width: 95%;
+  max-height: 95%;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); }
+
+.canvas2 {
+  display: none; }
+
+button,
+.button {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(to bottom right, #D84155, #882963);
+  padding: 0.6rem;
+  color: #fff;
+  border-radius: 2px;
+  width: 100%; }
+  button:hover,
+  .button:hover {
+    background: linear-gradient(to bottom right, #e16b7b, #af3580); }
+
+.section {
+  padding: 1rem; }
+
+input[type=text],
+input[type=number],
+input[type=range],
+select {
+  display: block;
+  width: 100%; }
+
+input[type=text],
+input[type=number],
+select {
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 .5rem;
+  background: #fff;
+  border: none;
+  margin-bottom: .75rem; }
+
+.controls {
+  position: fixed;
+  top: 40px;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  background: #333;
+  padding: 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-top: 1px solid #444; }
+  .controls h3 {
+    color: #f8f8f8;
+    padding: .5rem 1rem;
+    margin: 0;
+    font-weight: 600; }
+
+.fieldgroup {
+  padding: 1rem;
+  background: #222; }
+
+label {
+  display: block; }
+
+.footer {
+  position: absolute;
+  color: #888;
+  bottom: 2rem;
+  width: 100%;
+  font-size: .9em;
+  text-align: center;
+}
+
+.loader {
+  position: absolute;
+  top: 50%; }
+
+.loader {
+  position: absolute;
+  filter: url("#goo");
+  top: calc(50% - 15px);
+  left: calc(50% - 45px);
+  height: 30px;
+  width: 90px; }
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 30px; }
+  .circle:first-child {
+    animation: a1 1200ms ease-out infinite; }
+  .circle:last-child {
+    animation: a2 1200ms ease-out infinite; }
+  .circle:nth-child(2) {
+    animation: a3 1200ms ease-out infinite; }
+  .circle:nth-child(3) {
+    animation: a4 1200ms ease-out infinite; }
+
+@keyframes a1 {
+  0% {
+    transform: translateX(0); }
+  6% {
+    transform: translateX(-3.75px) scale(0.75); }
+  24%, 30% {
+    transform: translateX(-15px) scale(0.65); }
+  36% {
+    transform: translateX(-15px) scale(0.5); }
+  60%, 70% {
+    transform: translateX(-15px) scale(0.4); }
+  85% {
+    transform: translateX(-3.75px) scale(0.9); }
+  90% {
+    transform: translateX(0); } }
+
+@keyframes a2 {
+  0% {
+    transform: translateX(0); }
+  6% {
+    transform: translateX(-3.75px) scale(0.75); }
+  24%, 30% {
+    transform: translateX(-15px) scale(0.65); }
+  36% {
+    transform: translateX(-22.5px) scale(0.5); }
+  60%, 70% {
+    transform: translateX(-45px) scale(0.4); }
+  85% {
+    transform: translateX(-3.75px) scale(0.9); }
+  90% {
+    transform: translateX(0); } }
+
+@keyframes a3 {
+  0% {
+    transform: translateX(0); }
+  6% {
+    transform: translateX(3.75px) scale(0.75); }
+  24%, 30% {
+    transform: translateX(15px) scale(0.65); }
+  36% {
+    transform: translateX(22.5px) scale(0.5); }
+  60%, 70% {
+    transform: translateX(45px) scale(0.4); }
+  85% {
+    transform: translateX(3.75px) scale(0.9); }
+  90% {
+    transform: translateX(0); } }
+
+@keyframes a4 {
+  0% {
+    transform: translateX(0); }
+  6% {
+    transform: translateX(3.75px) scale(0.75); }
+  24%, 30% {
+    transform: translateX(15px) scale(0.65); }
+  36% {
+    transform: translateX(15px) scale(0.5); }
+  60%, 70% {
+    transform: translateX(15px) scale(0.4); }
+  85% {
+    transform: translateX(3.75px) scale(0.9); }
+  90% {
+    transform: translateX(0); } }</code></pre><h3>JS</h3><pre><code>/**
+ * Author: Charles Ojukwu
+ */
+(function () {
+
+'use strict';
+
+var cvs,//canvas
+    ctx,//canvas context
+    gridWidth,//draw width (2 cells wider than the actual canvas)
+    gridHeight,//draw height (2 cells taller than the actual canvas)
+    vRange,
+    cRange,
+    maxCols,
+    maxRows,
+    oAmount,
+    imgd,imge,
+    base_image,
+    saveBtn,
+    cvs2,
+    ctx2,
+    loader,
+    numColours,
+    preset;
+var points = [];
+var cellSize = 50;//size of a single grid square
+var variance = 0.2;
+var ovA = 0.5;
+var colours = ["#22bbee","#8855cc","#ee2266","#ee7722"];
+
+function init () {
+    //Add on load scripts
+    cvs = document.getElementById("canvas");
+    cRange = document.getElementById("cell-size");
+    vRange = document.getElementById("variance");
+    oAmount = document.getElementById("oamount");
+    saveBtn = document.getElementById('save');
+    ctx = cvs.getContext("2d");
+    cvs2 = document.getElementById("canvas2");
+    ctx2 = cvs2.getContext("2d");
+    numColours = document.getElementById("numColours");
+
+    preset = document.getElementById("preset-size");
+
+    preset.addEventListener("change",function () {
+        var temp5 = preset.value.split("-");
+        console.log(temp5);
+
+        document.getElementById('width').value = parseInt(temp5[0]);
+        document.getElementById('height').value = parseInt(temp5[1]);
+    },false);
+
+
+    var setSize = function(w,h) {
+        cvs.width = w;
+        cvs.height = h;
+
+        gridWidth = cvs.width+cellSize*2;
+        gridHeight = cvs.height+cellSize*2;
+
+        cvs2.width = cvs.width;
+        cvs2.height = cvs.height;
+        //Repopulate inputs
+        document.getElementById('width').value = w;
+        document.getElementById('height').value = h;
+    }
+
+    var setCols = function() {
+        for (var i = 0; i &lt; numColours.value; i++) {
+            var temp = document.createElement("input");
+            temp.type = "color";
+            temp.id = "colour" +(i+1);
+
+            document.getElementById("colour-div").appendChild(temp);
+            document.getElementById("num-colours").innerHTML = numColours.value;
+            temp.value = colours[i];
+            temp.addEventListener("change",function () {
+                //document.getElementById("colour-div").innerHTML = "";
+                //setCols();
+                drawBG(ctx2,cvs2);
+                loader.style.display = "";
+                var blob = window.setTimeout(function () {
+                    pointFun();
+                },2);
+            },false);
+        }
+    }
+
+    setCols();
+
+    setSize(1280,720);
+    //base_image = new Image();
+    //base_image.crossOrigin = "Anonymous";
+    //base_image.src = 'download.png';
+    //base_image.&#111;nload = function () {
+        drawBG(ctx2,cvs2);
+        loader = document.getElementById("loader");
+        pointFun();
+    //}
+    var tout = 0;
+    numColours.addEventListener("change",function () {
+        document.getElementById("colour-div").innerHTML = "";
+        setCols();
+        drawBG(ctx2,cvs2);
+        loader.style.display = "";
+        var blob = window.setTimeout(function () {
+            pointFun();
+        },tout);
+    },false);
+    cRange.addEventListener("change",function () {
+        loader.style.display = "";
+        var blob = window.setTimeout(function () {
+            pointFun();
+        },tout);
+    },false);
+    vRange.addEventListener("change",function () {
+        loader.style.display = "";
+        var blob = window.setTimeout(function () {
+            pointFun();
+        },tout);
+    },false);
+    oAmount.addEventListener("change",function () {
+        loader.style.display = "";
+        var blob = window.setTimeout(function () {
+            pointFun(true);
+        },tout);
+    },false);
+
+    var sizeBtn = document.getElementById('size-btn');
+    sizeBtn.addEventListener("click",function () {
+        var tempw = document.getElementById('width').value;
+        var temph = document.getElementById('height').value;
+        setSize(tempw,temph);
+        drawBG(ctx2,cvs2);
+        console.log(tempw +" : "+ temph)
+        pointFun();
+    })
+
+    //saveBtn.addEventListener("click",saveImage,false);
+}
+//Particle constructor
+function point () {
+    /*this.x = Math.random()*cvs.width;;
+    this.y = Math.random()*cvs.height;
+    this.vx = (Math.random()*2)-1;
+    this.vy = (Math.random()*2)-1;*/
+    //points.push(this);
+}
+
+function drawBG(context,canvas) {
+    context.clearRect(0, 0, cvs.width, cvs.height);
+    context.globalCompositeOperation = "multiply";
+    var bg = context.createLinearGradient(0,0,canvas.width,0);
+
+    //Duskish gradient
+    /*bg.addColorStop(0,"#0e1b32");
+    bg.addColorStop(0.8,"#c28993");
+    bg.addColorStop(1,"#ffc7af");*/
+
+    //Pink/Purple Gradient
+    /*bg.addColorStop(0,"#85c");
+    bg.addColorStop(1,"#d14");*/
+
+    //Whitish
+    /*bg.addColorStop(0,"#f8f8f8");
+    bg.addColorStop(1,"#ddd");*/
+    var inputs = document.getElementById("colour-div").getElementsByTagName('input');
+    //console.log(inputs.length);
+    for (var i = 0; i &lt; inputs.length; i++) {
+        if (inputs.length &gt; 1) {
+            bg.addColorStop(i/(inputs.length-1),inputs[i].value);
+            console.log(inputs[i].value);
+        }else{
+            bg = inputs[i].value;
+        }
+        colours[i] = inputs[i].value;
+    }
+
+    context.fillStyle = bg;
+    context.beginPath();
+    context.fillRect(0,0,canvas.width,canvas.height);
+    context.closePath();
+    context.fill();
+
+    context.beginPath();
+    var bg2 = context.createLinearGradient(0,0,0,cvs.height);
+    bg2.addColorStop(0,"#fff");
+    bg2.addColorStop(1,"#ccc");
+    context.fillStyle = bg2;
+    context.fillRect(0,0,cvs.width,cvs.height);
+    context.closePath();
+    context.fill();
+    context.globalCompositeOperation = "source-over";
+    //ctx.drawImage(base_image, 0, 0);
+    if (context == ctx2) {imgd = context;}
+    else if (imgd.getImageData(0, 0, 1, 1).data[3] &lt; 255 || imgd.getImageData(canvas.width-1, canvas.height-1, 1, 1).data[3] &lt; 255) {
+        context.clearRect(0,0,canvas.width,canvas.height);
+    }
+    
+
+}
+
+function saveImage() {
+    // body...
+    var dataURL = canvas.toDataURL();
+    saveBtn.href = dataURL;
+}
+
+function draw (obj,rand) {
+
+    var red,blue,green,alpha;
+
+    var setColour = function (xpos,ypos) {
+        if (xpos &lt; 0) {
+            xpos = 0;
+        }
+        if (xpos &gt; cvs.width-1) {
+            xpos = cvs.width-1;
+        }
+        if (ypos &lt; 0) {
+            ypos = 0;
+        }
+        if (ypos &gt; cvs.height-1) {
+            ypos = cvs.height-1;
+        }
+        red = imgd.getImageData(xpos, ypos, 1, 1).data[0];
+        green = imgd.getImageData(xpos, ypos, 1, 1).data[1];
+        blue = imgd.getImageData(xpos, ypos, 1, 1).data[2];
+        alpha = imgd.getImageData(xpos, ypos, 1, 1).data[3];
+        
+    }
+
+    var filler = function () {
+        if(rand){
+            var temp = (Math.random()*2*ovA)-ovA;
+            ctx.fillStyle = "rgba("+Math.round(red-red*temp)+", "+Math.round(green-green*temp)+", "+Math.round(blue-blue*temp)+", "+alpha/255+")";
+        } else {
+            ctx.fillStyle = "rgba("+red+", "+green+", "+blue+", "+alpha/255+")";
+        }
+    }
+    
+    for (var i = 0; i &lt; points.length; i++) {
+        if (obj == points[i] &amp;&amp; obj.r % 2 == 0 &amp;&amp; points[i+maxCols+1] &amp;&amp; obj.c &lt; maxCols-1) {
+            //setColour(obj.x,obj.y+2*cellSize/3);
+            setColour(Math.round(obj.c/maxCols*gridWidth),Math.round(obj.r/maxRows*gridHeight+2*cellSize/3));
+            filler();
+            //console.log(obj.c);
+            ctx.beginPath();
+            ctx.moveTo(obj.x,obj.y);
+            ctx.lineTo(points[i+maxCols].x,points[i+maxCols].y);
+            ctx.lineTo(points[i+maxCols+1].x,points[i+maxCols+1].y);
+            ctx.closePath();
+            ctx.fill();
+            //ctx.stroke();
+
+            //setColour(obj.x+cellSize/2,obj.y+cellSize/3);
+            setColour(Math.round(obj.c/maxCols*gridWidth+cellSize/2),Math.round(obj.r/maxRows*gridHeight+cellSize/3));
+            filler();
+            //ctx.fillStyle = "green";
+            ctx.beginPath();
+            ctx.moveTo(obj.x,obj.y);
+            ctx.lineTo(points[i+1].x,points[i+1].y);
+            ctx.lineTo(points[i+maxCols+1].x,points[i+maxCols+1].y);
+            ctx.closePath();
+            ctx.fill();
+            //console.log("YES");
+        }
+        if (obj == points[i] &amp;&amp; obj.r % 2 != 0 &amp;&amp; points[i+maxCols+1] &amp;&amp; obj.c &gt; 0) {
+
+            //setColour(obj.x-cellSize/2,obj.y+cellSize/3);
+            setColour(Math.round((obj.c-1)/maxCols*gridWidth),Math.round(obj.r/maxRows*gridHeight+cellSize/3));
+            //if (!setColour(Math.round((obj.c-1)/maxCols*gridWidth),200)) {console.log(obj)}
+            filler();
+            ctx.beginPath();
+            ctx.moveTo(obj.x,obj.y);
+            ctx.lineTo(points[i-1].x,points[i-1].y);
+            ctx.lineTo(points[i+maxCols-1].x,points[i+maxCols-1].y);
+            ctx.closePath();
+            ctx.fill();
+            //ctx.stroke();
+
+            //setColour(obj.x,obj.y+2*cellSize/3);
+            setColour(Math.round((obj.c-1)/maxCols*gridWidth+cellSize/2),Math.round(obj.r/maxRows*gridHeight+2*cellSize/3));
+            filler();
+            //ctx.fillStyle = "green";
+            ctx.beginPath();
+            ctx.moveTo(obj.x,obj.y);
+            ctx.lineTo(points[i+maxCols-1].x,points[i+maxCols-1].y);
+            ctx.lineTo(points[i+maxCols].x,points[i+maxCols].y);
+            ctx.closePath();
+            ctx.fill();
+            //console.log("NO");
+        }
+    }
+}
+//Point generator
+function generatePoints (amount) {
+    points = [];
+    var temp;
+    var row = 0;
+    var col = 0;
+    for (var i = 0; i &lt; amount; i++) {
+        temp = new point();
+        if (row % 2 == 0) {
+            temp.x = (col*cellSize)-cellSize;
+            temp.x = temp.x + (Math.random()-.5)*variance*cellSize*2;
+        } else {
+            temp.x = (col*cellSize)-cellSize-cellSize/2;
+            temp.x = temp.x + (Math.random()-.5)*variance*cellSize*2;
+        }
+        temp.y = (row*cellSize*0.866)-cellSize;
+        temp.y = temp.y + (Math.random()-.5)*variance*cellSize*2;
+        temp.r = row;
+        temp.c = col;
+        points.push(temp);
+        col = col + 1;
+        if ((i+1) % maxCols == 0) {
+            row = row + 1;
+            col = 0;
+        }
+    }
+    //console.log(points);
+}
+
+function addRand (a,b) {
+    return (Math.random()*b*a-(b/2))
+}
+
+function pointFun (drawOnly) {
+    if(drawOnly === true){
+        //do nothing
+    }else{
+        cellSize = (cRange.value*3)+30;
+        variance = vRange.value/100;
+        gridWidth = cvs.width+cellSize*2;
+        gridHeight = cvs.height+cellSize*2;
+        maxCols = Math.ceil(gridWidth / cellSize)+2;
+        maxRows = Math.ceil(gridHeight / (cellSize*0.865))
+        //console.log(maxCols);
+        var x = maxCols;
+        var y = maxRows;
+        generatePoints(x*y);
+    }
+    ovA = oAmount.value/100;
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+    drawBG(ctx,cvs);
+    for (var i = 0; i &lt; points.length; i++) {
+        draw(points[i],true);
+    };
+    saveImage();
+    loader.style.display = "none";
+}
+
+//Execute when DOM has loaded
+document.addEventListener('DOMContentLoaded',init,false);
+
+})();</code></pre>
+		
+		
+		<div class="c-post__adv">
+			<!-- Yandex.RTB R-A-134311-2 -->
+<div id="yandex_rtb_R-A-134311-2"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-134311-2",
+                renderTo: "yandex_rtb_R-A-134311-2",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+		</div>
+		
+		<div class="c-post__example">
+			
+			
+		</div>
+	</div>
+
+
+	<!-- begin c-post__info -->
+	<div class="c-post__info">
+		<!-- begin c-info -->
+		<div class="c-info">
+
+			<div class="c-info__item">
+				<div class="c-info__title">Ссылки</div>
+				<!-- begin c-links -->
+				<div class="c-links">
+					
+					
+					<div class="c-links__item">
+						<a href="https://codepen.io/cojdev/pen/vgmxmj" class="c-links__link">
+							<svg class="svg-icon icon-link">
+								<use xlink:href="#link"></use>
+							</svg> https://codepen.io/cojdev/pen/vgmxmj</a>
+					</div>
+					
+				</div>
+				<!-- end c-links -->
+			</div>
+
+			
+		</div>
+		<!-- end c-info -->
+		<!-- begin c-tags -->
+		<div class="c-tags c-tags--sm">
+			
+		</div>
+		<!-- end c-tags -->
+		<!-- begin c-share -->
+		<script src="//platform-api.sharethis.com/js/sharethis.js#property=59c258d92b68e2001125adeb&product=inline-share-buttons"></script>
+		<div class="c-share">
+			<div class="sharethis-inline-share-buttons"></div>
+		</div>
+		<!-- end c-share -->
+		
+	</div>
+	<!-- end c-post__info -->
+</article>
+<!-- end c-post -->
+<!-- BEGIN c-block -->
+<section class="c-block" data-fly="<section>">
+	<h2 class="c-block__title">Комментарии</h2>
+	<!-- begin c-comments -->
+	<div class="c-comments">
+		<div id="js-tabs">
+			<div class="c-nav-tabs__wrapper">
+				<ul class="c-nav-tabs">
+					<li class="c-nav-tabs__item waves-effect">
+						<svg class="svg-icon icon-facebook">
+							<use xlink:href="#facebook"></use>
+						</svg>
+						<span class="c-nav-tabs__text">Facebook</span>
+					</li>
+					<li class="c-nav-tabs__item waves-effect">
+						<svg class="svg-icon icon-vk">
+							<use xlink:href="#vk"></use>
+						</svg>
+						<span class="c-nav-tabs__text">Вконтакте</span>
+					</li>
+					<li class="c-nav-tabs__item c-nav-tabs__bar"></li>
+				</ul>
+			</div>
+			<!-- BEGIN c-tabs -->
+			<div class="c-tabs">
+				<div class="c-tabs__item is-active">
+					<div id="fb-root"></div>
+					<div class="fb-comments" data-href="https://pcvector.net/codepen/616-nizko-poligonalnyj-generator-fona.html" data-width="100%" data-numposts="5"></div>
+				</div>
+				<div class="c-tabs__item">
+          <script type="text/javascript" src="https://userapi.com/js/api/openapi.js?47"></script>
+    			<script type="text/javascript">
+    				VK.init({apiId: 2289323, onlyWidgets: true});
+    			</script>
+          <div id="vk_comments"></div>
+          <script type="text/javascript">
+          VK.Widgets.Comments("vk_comments", {limit: 5, attach: false});
+          </script>
+				</div>
+			</div>
+			<!-- END c-tabs -->
+		</div>
+	</div>
+	<!-- end c-comments -->
+</section>
+<!-- END c-block -->
+
+
+<section class="c-block">
+	<h3 class="c-block__title">Похожие статьи</h3>
+	<div class="c-recommend">
+		<div class="c-recommend__item">
+	
+	<div class="c-recommend__picture">
+		<a href="https://pcvector.net/codepen/602-rentgen-kashalota.html" class="c-recommend__link waves-effect waves-light">
+			<img src="/uploads/posts/2018-07/1531073000_roentgen-min.jpg" alt="" class="c-recommend__img">
+		</a>
+	</div>
+	
+	<div class="c-recommend__body">
+		<div class="c-recommend__title">
+			<a href="https://pcvector.net/codepen/602-rentgen-kashalota.html" class="c-recommend__link">Рентген кашалота</a>
+		</div>
+		<div class="c-recommend__cat">Codepen</div>
+	</div>
+</div>
+<div class="c-recommend__item">
+	
+	<div class="c-recommend__picture">
+		<a href="https://pcvector.net/codepen/558-plazmennye-krugi.html" class="c-recommend__link waves-effect waves-light">
+			<img src="/uploads/posts/2018-03/1522089025_plasma-ball-min.jpg" alt="" class="c-recommend__img">
+		</a>
+	</div>
+	
+	<div class="c-recommend__body">
+		<div class="c-recommend__title">
+			<a href="https://pcvector.net/codepen/558-plazmennye-krugi.html" class="c-recommend__link">Плазменные круги</a>
+		</div>
+		<div class="c-recommend__cat">Codepen</div>
+	</div>
+</div>
+<div class="c-recommend__item">
+	
+	<div class="c-recommend__picture">
+		<a href="https://pcvector.net/codepen/554-generator-korobki-peredach.html" class="c-recommend__link waves-effect waves-light">
+			<img src="/uploads/posts/2018-03/1520794979_transmission-generator-min.jpg" alt="" class="c-recommend__img">
+		</a>
+	</div>
+	
+	<div class="c-recommend__body">
+		<div class="c-recommend__title">
+			<a href="https://pcvector.net/codepen/554-generator-korobki-peredach.html" class="c-recommend__link">Генератор коробки передач</a>
+		</div>
+		<div class="c-recommend__cat">Codepen</div>
+	</div>
+</div>
+<div class="c-recommend__item">
+	
+	<div class="c-recommend__picture">
+		<a href="https://pcvector.net/codepen/550-letyaschiy-kosmicheskiy-korabl.html" class="c-recommend__link waves-effect waves-light">
+			<img src="/uploads/posts/2018-03/1520450880_rocket-ship-min.jpg" alt="" class="c-recommend__img">
+		</a>
+	</div>
+	
+	<div class="c-recommend__body">
+		<div class="c-recommend__title">
+			<a href="https://pcvector.net/codepen/550-letyaschiy-kosmicheskiy-korabl.html" class="c-recommend__link">Летящий космический корабль</a>
+		</div>
+		<div class="c-recommend__cat">Codepen</div>
+	</div>
+</div>
+<div class="c-recommend__item">
+	
+	<div class="c-recommend__picture">
+		<a href="https://pcvector.net/codepen/547-sluchaynyy-generator-morskih-konkov.html" class="c-recommend__link waves-effect waves-light">
+			<img src="/uploads/posts/2018-03/1520449494_seahorse-min.jpg" alt="" class="c-recommend__img">
+		</a>
+	</div>
+	
+	<div class="c-recommend__body">
+		<div class="c-recommend__title">
+			<a href="https://pcvector.net/codepen/547-sluchaynyy-generator-morskih-konkov.html" class="c-recommend__link">Случайный генератор морских коньков</a>
+		</div>
+		<div class="c-recommend__cat">Codepen</div>
+	</div>
+</div>
+
+	</div>
+</section>
+
+</div>
+					</div>
+				</main>
+				<aside class="l-page__side" role="complementary">
+					<div class="l-aside">
+	<div class="l-aside__item">
+
+			<section class="c-block">
+			  <h3 class="c-block__title">Популярные статьи</h3>
+				<div class="c-pens">
+					
+				</div>
+			</section>
+
+		
+			<section class="c-block">
+				<h3 class="c-block__title h-hide">Реклама</h3>
+				<!-- Yandex.RTB R-A-134311-3 -->
+<div id="yandex_rtb_R-A-134311-3"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-134311-3",
+                renderTo: "yandex_rtb_R-A-134311-3",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+			</section>
+		
+
+		<section class="c-block">
+			<h3 class="c-block__title">Опрос</h3>
+			<script>
+<!--
+function doVote( event ){
+
+	
+	var vote_check = $('#dle-vote input:radio[name=vote_check]:checked').val();
+	
+	if (typeof vote_check == "undefined" &&  event == "vote") {
+		return false;
+	}
+	
+	ShowLoading('');
+
+	$.get(dle_root + "engine/ajax/controller.php?mod=vote", { vote_id: "24", vote_action: event, vote_check: vote_check, vote_skin: dle_skin, user_hash: dle_login_hash }, function(data){
+
+		HideLoading('');
+
+		$("#vote-layer").fadeOut(500, function() {
+			$(this).html(data);
+			$(this).fadeIn(500);
+		});
+
+	});
+}
+//-->
+</script><div id='vote-layer'><div id="votes">
+	<div class="c-poll__more vote_more">
+		<a href="#" onclick="ShowAllVotes(); return false;" title="Другие опросы..." class="c-poll__link c-btn c-btn--floating c-btn--flat c-btn--default waves-effect">
+			<svg class="svg-icon icon-more"><use xlink:href="#more"></use></svg>
+		</a>
+	</div>
+	<h4 class="c-poll__title">В редакторе кода я предпочитаю тему оформления</h4>
+	<form method="post" name="vote" class="c-form c-form--material">
+		<div class="vote_list">
+			<div id="dle-vote" class="c-poll"><div class="c-form__group c-poll__item"><label class="c-radio" for="vote_check0"><input type="radio" id="vote_check0" name="vote_check" checked="checked" value="0"><i></i><span>Темную</span></label></div><div class="c-form__group c-poll__item"><label class="c-radio" for="vote_check1"><input type="radio" id="vote_check1" name="vote_check"  value="1"><i></i><span>Светлую</span></label></div></div>
+		</div>
+	
+
+		<input type="hidden" name="vote_action" value="vote">
+		<input type="hidden" name="vote_id" id="vote_id" value="24">
+		<button title="Голосовать" class="c-btn c-btn--primary waves-effect waves-light" type="submit" onclick="doVote('vote'); return false;" >Голосовать</button>
+		<button title="Результаты опроса" class="c-poll__results c-btn c-btn--default c-btn--floating c-btn--flat waves-effect" type="button" onclick="doVote('results'); return false;" >
+			<svg class="svg-icon icon-bar-chart"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bar-chart"></use></svg>
+		</button>
+	</form>
+
+</div>
+</div>
+		</section>
+		
+		<section class="c-block">
+			<h3 class="c-block__title"><a href="/news/">Новости</a></h3>
+			<div class="c-news">
+				
+			</div>
+		</section>
+
+	</div>
+	<div class="l-aside__item">
+
+		<section class="c-block">
+			<h3 class="c-block__title"><a href="https://www.facebook.com/pcvector/">Подпишись</a></h3>
+			<a href="https://www.facebook.com/pcvector" class="c-facebook waves-light waves-effect" aria-label="Страница сайта на facebook">
+				<svg class="svg-icon icon-facebook"><use xlink:href="#facebook"></use></svg>
+			</a>
+			<div class="c-facebook__desc">Присоединяйся, чтобы узнать все самое интересное для&nbsp;<b>frontend</b> разработчика и&nbsp;анонсы статей с&nbsp;сайта.</div>
+		</section>
+
+		<section class="c-block">
+			<h3 class="c-block__title"><a href="/useful/">Разное</a></h3>
+			<div class="c-news">
+				<div class="c-news__item">
+	<div class="c-news__title">
+		<a href="https://pcvector.net/useful/555-susy-3-instrument-dlya-verstki-setok-na-sass.html" class="c-news__link">Susy 3 — инструмент для верстки сеток на SASS</a>
+	</div>
+  <time class="c-news__time" datetime="2018-03-13">13.03.2018</time>
+</div>
+<div class="c-news__item">
+	<div class="c-news__title">
+		<a href="https://pcvector.net/useful/475-analiz-skorosti-mobilnoy-versii-sayta.html" class="c-news__link">Анализ скорости мобильной версии сайта</a>
+	</div>
+  <time class="c-news__time" datetime="2017-07-31">31.07.2017</time>
+</div>
+<div class="c-news__item">
+	<div class="c-news__title">
+		<a href="https://pcvector.net/useful/452-otzyvchivyy-veb-dizayn-vitaliy-fridman.html" class="c-news__link">Отзывчивый веб-дизайн - Виталий Фридман</a>
+	</div>
+  <time class="c-news__time" datetime="2014-12-06">06.12.2014</time>
+</div>
+<div class="c-news__item">
+	<div class="c-news__title">
+		<a href="https://pcvector.net/useful/448-hovercss-kollekciya-css3-effektov-pri-navedenii.html" class="c-news__link">Hover.css - коллекция CSS3 эффектов при наведении</a>
+	</div>
+  <time class="c-news__time" datetime="2014-08-29">29.08.2014</time>
+</div>
+<div class="c-news__item">
+	<div class="c-news__title">
+		<a href="https://pcvector.net/useful/447-animatecss-sborka-css3-animaciy.html" class="c-news__link">Animate.css - сборка CSS3 анимаций</a>
+	</div>
+  <time class="c-news__time" datetime="2014-08-22">22.08.2014</time>
+</div>
+
+			</div>
+		</section>
+
+		
+		<section class="c-block">
+			<h3 class="c-block__title h-hide">Реклама</h3>
+			<!-- Yandex.RTB R-A-134311-4 -->
+<div id="yandex_rtb_R-A-134311-4"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-134311-4",
+                renderTo: "yandex_rtb_R-A-134311-4",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+		</section>
+		
+
+
+		<section class="c-block">
+			<h3 class="c-block__title">Свежие статьи</h3>
+			<div class="c-news">
+				
+			</div>
+		</section>
+
+		
+
+
+	</div>
+</div>
+
+				</aside>
+			</div>
+		</div>
+		<footer class="c-footer" role="contentinfo">
+	<div class="l-wrapper">
+		<div class="c-footer__inner" data-fly="<footer>">
+			<ul class="c-menu">
+				<li class="c-menu__item">
+				  <a href="/cookie-policy.html" class="c-menu__link">Cookies</a>
+				</li>
+			</ul>
+			<p class="c-copyright">&copy; 2011 — 2020 Скрипты для сайтов</p>
+		</div>
+	</div>
+</footer>
+
+	</div>
+</div>
+<!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter34183940 = new Ya.Metrika({ id:34183940, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/34183940" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+<link href="/engine/classes/min/index.php?charset=utf-8&amp;f=engine/editor/css/default.css&amp;v=24" rel="stylesheet" type="text/css">
+<script src="/engine/classes/min/index.php?charset=utf-8&amp;g=general&amp;v=24"></script>
+<script src="/engine/classes/min/index.php?charset=utf-8&amp;f=engine/classes/js/jqueryui.js,engine/classes/js/dle_js.js,engine/classes/highlight/highlight.code.js&amp;v=24" defer></script>
+<script>
+<!--
+var dle_root       = '/';
+var dle_admin      = '';
+var dle_login_hash = 'c28117e7cfd8556af7947cac5de14ee00b54f606';
+var dle_group      = 5;
+var dle_skin       = 'pcvector';
+var dle_wysiwyg    = '1';
+var quick_wysiwyg  = '1';
+var dle_act_lang   = ["Да", "Нет", "Ввод", "Отмена", "Сохранить", "Удалить", "Загрузка. Пожалуйста, подождите..."];
+var menu_short     = 'Быстрое редактирование';
+var menu_full      = 'Полное редактирование';
+var menu_profile   = 'Просмотр профиля';
+var menu_send      = 'Отправить сообщение';
+var menu_uedit     = 'Админцентр';
+var dle_info       = 'Информация';
+var dle_confirm    = 'Подтверждение';
+var dle_prompt     = 'Ввод информации';
+var dle_req_field  = 'Заполните все необходимые поля';
+var dle_del_agree  = 'Вы действительно хотите удалить? Данное действие невозможно будет отменить';
+var dle_spam_agree = 'Вы действительно хотите отметить пользователя как спамера? Это приведёт к удалению всех его комментариев';
+var dle_complaint  = 'Укажите текст Вашей жалобы для администрации:';
+var dle_big_text   = 'Выделен слишком большой участок текста.';
+var dle_orfo_title = 'Укажите комментарий для администрации к найденной ошибке на странице';
+var dle_p_send     = 'Отправить';
+var dle_p_send_ok  = 'Уведомление успешно отправлено';
+var dle_save_ok    = 'Изменения успешно сохранены. Обновить страницу?';
+var dle_reply_title= 'Ответ на комментарий';
+var dle_tree_comm  = '0';
+var dle_del_news   = 'Удалить статью';
+var dle_sub_agree  = 'Вы действительно хотите подписаться на комментарии к данной публикации?';
+var allow_dle_delete_news   = false;
+var dle_search_delay   = false;
+var dle_search_value   = '';
+jQuery(function($){
+FastSearch();
+$('pre code').each(function(i, e) {hljs.highlightBlock(e, null)});
+});
+//-->
+</script>
+<script src="/templates/pcvector/js/main.min.js" defer></script>
+<script src="/templates/pcvector/js/init.js?7" defer></script>
+<!--[if lte IE 9]>
+<div class="ie-error">
+	<ul class="browsers">
+		<li class="browser browser_type_fx">
+			<a class="link link-params" href="https://www.mozilla.org/ru/firefox/new/" target="_top" rel="nofollow">
+				<div class="browser__icon browser__icon_type_fx"></div>
+				<span class="browser__name">Mozilla Firefox</span>
+			</a>
+			<a class="c-btn c-btn--primary" href="https://www.mozilla.org/ru/firefox/new/" target="_blank" rel="nofollow">Скачать</a>
+		</li>
+		<li class="browser browser_type_chrome">
+			<a class="link link-params" href="https://google.ru/chrome/" target="_top" autofocus rel="nofollow">
+				<div class="browser__icon browser__icon_type_chrome"></div>
+				<span class="browser__name">Google Chrome</span>
+			</a>
+			<a class="c-btn c-btn--primary" href="https://google.ru/chrome/" target="_blank" rel="nofollow">Скачать</a>
+		</li>
+		<li class="browser browser_type_ie">
+			<a class="link link-params" href="http://windows.microsoft.com/ru-ru/internet-explorer/ie-11-worldwide-languages" target="_top" rel="nofollow">
+				<div class="browser__icon browser__icon_type_ie"></div>
+				<span class="browser__name">Internet Explorer</span>
+			</a>
+			<a class="c-btn c-btn--primary" href="http://windows.microsoft.com/ru-ru/internet-explorer/ie-11-worldwide-languages" target="_blank" rel="nofollow">Скачать</a>
+		</li>
+		<li class="browser browser_type_opera">
+			<a class="link link-params" href="http://www.opera.com" target="_top" rel="nofollow">
+				<div class="browser__icon browser__icon_type_opera"></div>
+				<span class="browser__name">Opera</span>
+			</a>
+			<a class="c-btn c-btn--primary" href="http://www.opera.com" target="_blank" rel="nofollow">Скачать</a>
+		</li>
+	</ul>
+	<h3>Установите актуальную версию вашего браузера или одну из современных альтернатив.</h3>
+</div>
+<![endif]-->
+
+<div class="c-cookie-bar">
+	<div class="l-wrapper">
+		<div class="c-cookie-bar__body">Мы используем файлы cookie.<br><span class="c-cookie-bar__small">Продолжая навигацию по веб-сайту, вы соглашаетесь на использование cookie-файлов.</span>
+		</div>
+		<a class="c-btn c-btn--secondary waves-effect waves-light" href="#" rel="nofollow">ОК</a>
+	</div>
+</div>
+
+</body>
+</html>
+<!-- DataLife Engine Copyright SoftNews Media Group (http://dle-news.ru) -->

@@ -1,0 +1,163 @@
+body {
+	background: ;
+
+}
+header{
+    
+   
+   
+   display: flex;
+    justify-content: space-between;
+}
+.logo img {width: 30%;
+
+}
+	.call img{width: 30%;
+
+}
+
+button.call {
+padding: 17px 20px;
+border: 3px solid;
+border-image-source: linear-gradient(to left, #d003c1, #07f5ff);
+background: none;
+border-image-slice: 1;
+font-size: 20px;
+}
+
+.carousel-wrapper {
+height: 300px;
+position: relative;
+width: 500px;
+margin: 0 auto;
+border: solid 0px;
+}
+.carousel-item {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 25px 50px;
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
+	margin: auto;
+	font-size: 25px;
+	text-align: center;
+}
+.arrow {
+	border: solid #5a0054;
+	border-width: 0 5px 5px 0;
+	display:inline-block;
+	padding: 7px;
+}
+.arrow-prev {
+	left: 30px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) rotate(135deg);
+}
+.arrow-next {
+	right: 30px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) rotate(-45deg);
+}
+[id^="item"]{display: none;}
+.item-1 {
+	z-index: 2;
+	opacity: 1;
+}
+*:target ~ .item-1{
+	opacity: 0;
+}
+#item-1:target ~ .item-1{
+	opacity: 1;
+}
+#item-2:target ~ .item-2, #item-3:target ~ .item-3, #item-4:target ~ .item-4 {
+	z-index: 3;
+	opacity: 1;
+}
+.wrapper {
+	max-width: 1800px;
+	margin: 0 auto;
+	margin-bottom: 150px;
+	margin-top: 20px;
+	display: flex;
+	flex-wrap:wrap;
+	font-family: 'Urbanist',sans-serif;
+}  
+.text{
+	text-align: center;
+	 
+}
+table{
+	text-align: center;
+	width: 300px; /* Ширина таблицы */
+    border: 1px solid green; /* Рамка вокруг таблицы */
+    margin: auto; /* Выравниваем таблицу по центру окна  */
+   }
+   td {
+    text-align: center;
+}
+
+}
+.helper{
+	display: flex;
+}
+.personal{
+	
+}
+.onas{
+	text-align: center;
+}
+.home{
+	right: 1000px;
+}
+.wrapper {
+	width: 100%;
+}
+
+.header {
+	background: #4a76a8;
+	color: #f4f4f4;
+}
+
+.harder_content {
+	padding: 5px;
+}
+
+.nav_item {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 15px 25px;
+	margin: 2px;
+	cursor:pointer;
+	text-decoration: none;
+	color: #f4f4f4;
+	background: #4a76a8;
+}
+
+.nav_item:hover, .nav_item_active {
+	background: #4f7faf;
+}
+
+.main_content {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.theme-button {
+	position: absolute;
+	right: 5px;
+	
+	display: inline-block;
+	padding: 10px 25px;
+	cursor: pointer;
+	color: #f4f4f4;
+	background: #444;
+}
+
+.theme-button:hover {
+	background: #555;
+}
